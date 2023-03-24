@@ -1,0 +1,17 @@
+{
+    "name": "blog/comment",
+    "description": "Simple MVC PHP framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "app/"
+        ]
+    },
+    "require": {
+        "symfony/routing": "^4.4",
+        "symfony/http-foundation": "^4.4",
+      "ext-pdo": "*"
+    }
+}
