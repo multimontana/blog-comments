@@ -1,4 +1,5 @@
 <?php
+
 //site name
 define('SITE_NAME', 'blog_comment');
 
