@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Core;
 
@@ -23,7 +23,8 @@ trait Controller
      */
     #[NoReturn] private function sendResponse($data, array $httpHeaders = []) :void
     {
-        ob_clean();
+        if (ob_get_contents()) ob_clean();
+
         header_remove('Set-Cookie');
 
         if (is_array($httpHeaders) && count($httpHeaders)) {

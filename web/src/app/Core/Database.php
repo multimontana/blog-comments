@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Core;
 
 use JetBrains\PhpStorm\NoReturn;
@@ -9,12 +9,15 @@ Trait Database
     /**
      * @return PDO
      */
-	private function connect() :PDO
-	{
-		$string = "mysql:hostname=".DB_HOST.";dbname=".DB_NAME;
-
-        return new PDO($string,DB_USER,DB_PASS);
-	}
+	private function connect(): PDO
+    {
+        try {
+            $connection = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
+            return new PDO($connection, DB_USER, DB_PASS);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+    }
 
     /**
      * @param $query
@@ -40,7 +43,7 @@ Trait Database
 		}
 		return false;
 	}
-	
+
 }
 
 

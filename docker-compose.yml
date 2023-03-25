@@ -51,5 +51,3 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     ports:
       - "8989:3306"
-    volumes:
-      - "./data/db/mysql:/var/lib/mysql"
