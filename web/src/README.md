@@ -23,9 +23,11 @@ composer install
 ```
 
 ## DB
+At first you need to configure your db credentials in config/config.php folder and create the db with the name that you are configured.
+
+Run the following console command where your composer.json located or importing tables
 ```
-Need to configure your db credentials in config/config.php folder. 
-After that import the db_structure.sql file to your db
+composer run-script run-migrations
 ```
 
 ## On your own:
